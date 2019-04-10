@@ -28,8 +28,6 @@ import io.reactivex.schedulers.Schedulers;
 
 public class MainActivity extends AppCompatActivity {
 
-
-    ProgressBar pbLoading;
     RecyclerView rvRepos;
     EditText etUsername;
 
@@ -43,7 +41,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        pbLoading = findViewById(R.id.pbLoading);
         rvRepos = findViewById(R.id.rvRepos);
         etUsername = findViewById(R.id.etUsername);
 
@@ -68,8 +65,6 @@ public class MainActivity extends AppCompatActivity {
             }
 
             private void requestRepos(String username) {
-
-                pbLoading.setVisibility(View.VISIBLE);
 
                 mApiService.requestRepos(username).subscribeOn(Schedulers.io()).observeOn(
                         AndroidSchedulers.mainThread()).subscribe(new Observer<List<ResponseRepos>>() {
@@ -99,7 +94,6 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onComplete() {
 
-                        pbLoading.setVisibility(View.GONE);
 
                         Toast.makeText(MainActivity.this,"Got Data",Toast.LENGTH_SHORT).show();
 

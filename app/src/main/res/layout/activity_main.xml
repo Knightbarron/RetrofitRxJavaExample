@@ -9,13 +9,6 @@
     android:focusableInTouchMode="true"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="16dp"
-        app:srcCompat="@drawable/ic_github"
-        android:layout_gravity="center"
-        tools:ignore="ContentDescription" />
 
     <EditText
         android:id="@+id/etUsername"
@@ -29,15 +22,8 @@
         android:textColorHint="#000000"
         android:inputType="text"
         android:imeOptions="actionSearch"
-        android:hint="username_github"/>
+        android:hint="Put Username"/>
 
-    <ProgressBar
-        android:id="@+id/pbLoading"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:visibility="gone"
-        android:layout_gravity="center"/>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rvRepos"
